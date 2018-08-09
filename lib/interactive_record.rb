@@ -53,7 +53,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    row = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE attribute = ? AND grade = ?", name, grade)
+    row = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{self.column_names} = ? AND grade = ?", name, grade)
     DB[:conn].execute(sql)
   end
 binding.pry
