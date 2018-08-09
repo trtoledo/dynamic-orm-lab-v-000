@@ -56,5 +56,5 @@ class InteractiveRecord
     row = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{self.column_names} = ", name, grade)
     DB[:conn].execute(sql)
   end
-binding.pry
+
 end
