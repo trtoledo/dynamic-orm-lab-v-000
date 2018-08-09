@@ -53,7 +53,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    row = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{self.column_names} = #{self.class.table_name_for_insert} ")
+    row = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{self.column_names} = #{self.table_name_for_insert} ")
     DB[:conn].execute(sql)
   end
 
